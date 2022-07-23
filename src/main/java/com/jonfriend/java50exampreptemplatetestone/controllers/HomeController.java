@@ -25,11 +25,15 @@ import java.text.SimpleDateFormat;
 import com.jonfriend.java50exampreptemplatetestone.models.CategoryMdl;
 import com.jonfriend.java50exampreptemplatetestone.models.LoginUserMdl;
 import com.jonfriend.java50exampreptemplatetestone.models.ProductMdl;
+import com.jonfriend.java50exampreptemplatetestone.models.StudentMdl;
+import com.jonfriend.java50exampreptemplatetestone.models.TeacherMdl;
 import com.jonfriend.java50exampreptemplatetestone.models.TwinoneMdl;
 import com.jonfriend.java50exampreptemplatetestone.models.TwintwoMdl;
 import com.jonfriend.java50exampreptemplatetestone.models.UserMdl;
 import com.jonfriend.java50exampreptemplatetestone.services.CategorySrv;
 import com.jonfriend.java50exampreptemplatetestone.services.ProductSrv;
+import com.jonfriend.java50exampreptemplatetestone.services.StudentSrv;
+import com.jonfriend.java50exampreptemplatetestone.services.TeacherSrv;
 import com.jonfriend.java50exampreptemplatetestone.services.TwinoneSrv;
 import com.jonfriend.java50exampreptemplatetestone.services.TwintwoSrv;
 import com.jonfriend.java50exampreptemplatetestone.services.UserSrv;
@@ -52,6 +56,12 @@ public class HomeController {
 	
 	@Autowired
 	private TwintwoSrv twintwoSrv;
+	
+	@Autowired
+	private TeacherSrv teacherSrv;
+	
+	@Autowired
+	private StudentSrv studentSrv;
 
 //	JRF-FRI: end cut to HomeController
 	
@@ -166,6 +176,14 @@ public class HomeController {
 
 		List<TwintwoMdl> intVar4 = twintwoSrv.returnAll();
 		model.addAttribute("twintwoList", intVar4);
+		
+		
+		
+		List<TeacherMdl> intVar5 = teacherSrv.returnAll();
+		model.addAttribute("teacherList", intVar5);
+
+		List<StudentMdl> intVar6 = studentSrv.returnAll();
+		model.addAttribute("studentList", intVar6);
 		
 	    return "home.jsp";
 		// above is our dashboard; below is whatever "home app" you like to be skipping to.

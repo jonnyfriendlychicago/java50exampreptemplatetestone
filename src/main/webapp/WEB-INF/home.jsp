@@ -64,7 +64,7 @@
 
  --%>
 
-		<div id=List class="container-fluid">
+		<div id=twinoneList class="container-fluid">
 			<h3>Twinone List</h3>
 			<!-- <a href= "/store//new"><button class="btn btn-primary">Add Twinone</button></a> -->
 			<a href= "/twinone/new"><button class="btn btn-primary">Add Twinone</button></a>
@@ -120,6 +120,69 @@
 							<td>${record.id}</td>
 							<%-- <td><a href="/store/twintwo/${record.id}">${record.twintwoName}</a></td> --%>
 							<td><a href="/twintwo/${record.id}">${record.twintwoName}</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+	
+	
+		<div id=teacherList class="container-fluid">
+			<h3>Teacher List</h3>
+			<!-- <a href= "/store//new"><button class="btn btn-primary">Add Teacher</button></a> -->
+			<a href= "/teacher/new"><button class="btn btn-primary">Add Teacher</button></a>
+<%-- 			
+			<c:choose>
+				<c:when test="${mgmtPermissionErrorMsg != null}">
+					<p class="errorText">${mgmtPermissionErrorMsg}</p>
+				</c:when>
+				<c:otherwise></c:otherwise>
+			</c:choose> 
+--%>
+			<table class="table table-striped table-dark table-hover">
+				<thead>
+					<tr>
+						<th scope="col">id</th>
+						<th scope="col">Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="record" items="${teacherList}">
+						<tr>
+							<td>${record.id}</td>
+							<%-- <td><a href="/store//${record.id}">${record.Name}</a></td> --%>
+							<td><a href="/teacher/${record.id}">${record.teacherName}</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+		
+		<div id=studentList class="container-fluid">
+			<h3>Student List</h3>
+			<!-- <a href= "/store/student/new"><button class="btn btn-primary">Add Student</button></a> -->
+			<a href= "/student/new"><button class="btn btn-primary">Add Student</button></a>
+<%-- 			
+			<c:choose>
+				<c:when test="${mgmtPermissionErrorMsg != null}">
+					<p class="errorText">${mgmtPermissionErrorMsg}</p>
+				</c:when>
+				<c:otherwise></c:otherwise>
+			</c:choose> 
+--%>
+			<table class="table table-striped table-dark table-hover">
+				<thead>
+					<tr>
+						<th scope="col">id</th>
+						<th scope="col">studentName</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="record" items="${studentList}">
+						<tr>
+							<td>${record.id}</td>
+							<%-- <td><a href="/store/student/${record.id}">${record.studentName}</a></td> --%>
+							<td><a href="/student/${record.id}">${record.studentName}</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
